@@ -1,176 +1,134 @@
-//Math & Date
-// we have maths methode & properties inside of the Math class that can be access by Math object
-//console.log(Math.PI);
-//console.log(Math.E);
-//console.log(Math.SQRT2);
-//console.log(Math.SQRT1_2);
-//console.log(Math.LN2);
-//console.log(Math.LN10);
-//console.log(Math.LOG10E);
-//console.log(Math.LOG2E);
-//let data=167
-// every method in Math class will always return us a value(number)
-//console.log(Math.abs(data));
-//Math.pow(base,exponent)
-//console.log(Math.pow(data,8));
-//console.log(Math.sqrt(data));
-//console.log(Math.cbrt(data));
+//const promise=new Promise((resolve,reject)=>{
+//    reject(Error("Error ocuured"));
+//    
+//});
+//promise.catch(error =>console.log(error.message));
+//promise.catch(error =>console.log(error.message));
 
-// rounding of the data
-// 0.5 -> 1 ceil
-//0.4 -> 0 floor
+//console.log('start');
+//const promise1 = new Promise((resolve, reject)=>{
+//    console.log(1);
+//});
+//console.log('end');
 
-//let number=1.9999
-//number=Math.round(number)
-//console.log(number);
-//console.log(Math.ceil(number));
-//console.log(Math.floor(number));
-
-//let a=129
-//let d=a%10
-//a=Math.floor(a/10)
-//12 -- 1--
-
-// max and min
-//let a=10
-//let b=90
-//let c=76
-//console.log(Math.max(a,b,c));
-//console.log(Math.max(a,b,c,123,6,0));
-//console.log(Math.min(a,b,c));
-//console.log(Math.min(a,b,c,123,6,0));
-
-//let ar=(2* Math.PI * 5).toFixed(3)
-//console.log(ar);
-
-// to use the date class i.e. the properties and methods
-// we have to create a data object
-
-//let date= new Date()
-//console.log(date.getDate());
-//console.log(date.getDay());
-//console.log(date.getFullYear());
-//console.log(date.getHours());
-//console.log(date.getMilliseconds());
-//console.log(date.getMinutes());
-//console.log(date.getMonth());
-//console.log(date.getSeconds());
-//console.log(date.getTime());
-//console.log(date.getTimezoneOffset());
-//console.log(date.getUTCDate());
-
-// exception handeling
-// try and catch block
-//try{
-//    let a=10
-//    let b=0
-//    if(b==0){
-//        throw("denominator cannot e 0")
-//    }
-//    let ans=a/b;
-//    console.log(ans)
-//}catch(e){
-//    // the resolving to that code
-//    console.log("An exception occured:",e);
-
+//function performTask(){
+//    return new Promise(function(resolve,reject){
+//
+//    }) ;
 //}
+//let taskPromise=performTask()
 
-// exception pre-define/ user define
+//taskPromise
+//    .then(function(){
+//        console.log('Success 1');
+//    })
+//    .then(function(){
+//        console.log('Success 2');
+//    })
+//    .then(function(){
+//        console.log('Success 3');
+//    })
+//    .catch(function(){
+//        console.log('Error 1');
+//        
+//    })
+//    .then(function(){
+//        console.log('Success 4');
+//    });
 
-
-//Promise and async programming 
-//promises
-//handel all 3 state of promise
-
-// for example whatsapp
-// sender -> message ->Reciver
-let mypromise=new Promise((resolved,rejected)=>{
-    let x=60;
-    if(x<50){
-        resolved("this promise is resolved")
-    }else{
-        rejected("this promise is rejected")
-    }
-})
-//promise.then().then() handel errorv.catch()
-mypromise.then(value =>{
-    console.log("my promise is resolved",value);
-}).then(error =>{
-    console.log("my promise is rejected",error);
-}).catch(err =>{
-    console.error("Some error in promise",err)
-})
-
-//async program
-// build in
-// setInterval(()=>{},time), setTimeout(()=>{},time)
-// 1000ms = 1s
-
-//setInterval(()=>{
-//    console.log("this statement will be repeat on every 2s");
-//},2000)
-
-//let interval1=setInterval(()=>{
-//    console.log("this statement will be repeat on every 2s");
-//},2000)
-//document.getElementById('btn').onclick=()=>{ clearInterval(interval1)}
-console.log('log1');
-console.log('log2');
-console.log('log3');
-console.log('log4');
-
-setTimeout(()=>{
-    console.log("this is function has timout in 3s");
-},3000)
-
-async function promise1() {
-    let newpromise= new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            reject("my promise is rejected ")
-        },200)
-        
-    })
-    return newpromise
-}
-promise1().then((result)=>{
-    console.log("promise resolved",result);
-}).catch((err)=>{
-    console.error("promise rejected");
-})
-
-// async and await
-// let doSomthing=async ()=>{}
-
-async function doSomthing() {
-    let newpromise= new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            let x=30;
-            if(x<30){
-                resolve("my promise is resolved")
-            }else{
-                reject("my promise is rejected")
-            }
-        },3000)
-        
-    })
-    return newpromise
-    
-}
-//doSomthing().then((value)=>{
-//    console.log("my promise",value);
-//}).catch((err)=>{
-//    console.error("my promise error",err);
+// daut
+//const promise = new Promise((resolve)=>{
+//    resolve(1);
+//});
+//promise.then((value)=>{
+//    console.log(value);
+//    return value +1;
+//}).then((value)=>{
+//    console.log(value);
+//    throw new Error('Something went wrong');
+//}).catch((error)=>{
+//    console.log(error.message);
 //})
 
-// await promise 
-async function solvethis() {
-    try{
-        let result = await doSomthing()
-        console.log(result);
-    }catch(err){
-        console.error(err);
-    }
-    
-}
+//var promise = new Promise(function(resolve,reject){
+//    setTimeout(function(){
+//        resolve("Resolved!")
+//    },1000)
+//});
 
-solvethis()
+//promise.then(function(value){
+//    console.log(value);
+//})
+
+//let promise = new Promise(function(resolve, reject){
+//    setTimeout(()=> resolve(1),1000);
+//});
+//promise
+//    .then(function(result){
+//        console.log(result);
+//        return result*2
+//    })
+//    .then(function(result){
+//        console.log(result);
+//        return result*2;
+//    })
+//    .then(function(result){
+//        console.log(result);
+//        return result*2;
+//    })
+
+//daut
+//console.log('Start');
+//setTimeout(()=>{
+//    console.log('Timeout');
+//},0);
+//Promise.resolve().then(()=>{
+//    console.log('Promise resolved');
+//});
+//console.log('End');
+
+//daut
+//let firstTask = new Promise(function(resolve,reject){
+//    setTimeout(resolve, 500,'Task One');
+//});
+//let secondTask;
+//let thirdTask = new Promise(function(resolve, reject){
+//    setTimeout(resolve, 1200, 'Task Three')
+//});
+//let forthTask = new Promise(function(resolve, reject){
+//    setTimeout(reject, 300, 'Task four')
+//});
+//let fifthTask = new Promise(function(resolve, reject){
+//    setTimeout(resolve, 1000, 'Task Five')
+//});
+
+//let combinePromise = Promise.all([firstTask, secondTask,thirdTask,forthTask,fifthTask]);
+//combinePromise
+//    .then(function(data){
+//        data.forEach(function(value){
+//            console.log('Result:', value);
+//        })
+//    })
+//    .catch(function(error){
+//        console.log('Error:',error);
+//    })
+
+//const promise1 = new Promise(resolve=> setTimeout(resolve, 100, 'One')); 
+//const promise2 = new Promise(resolve=> setTimeout(resolve, 200, 'Two'));
+//Promise .race([promise1, promise2])
+//    .then(value => console.log(value))
+//    .catch(error => console.log(error));
+
+const promise1=Promise .resolve(1)
+const promise2 = new Promise(resolve=> setTimeout(resolve, 100, 'One')); 
+const promise3 = new Promise(resolve=> setTimeout(resolve, 200, 'Two'));
+Promise .all([promise1, promise2,promise3])
+    .then(value => console.log(value))
+    .catch(error => console.log(error));
+
+Promise .resolve(1)
+    .then(value =>{
+        console.log(value);
+        return Promise.resolve(2)
+    })
+    .then(value => console.log(value));
